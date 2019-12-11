@@ -1,0 +1,26 @@
+<div class = "container"> 
+  <div class="row justify-content-center">
+    <div class = "col-md-6">
+      <div class = card>
+        <div class=card-header>
+          <h2>Persona, Usuario componentes</h2>
+        </div>      
+        <div class=card-body>
+          <form>
+            <app-persona></app-persona>
+            <app-usuario></app-usuario>
+            <button class="btn btn-success" (click)="guardar()">Guardar</button>
+          </form>
+        </div>  
+      </div>
+      
+    </div> 
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="progress" style="margin: 1rem;" *ngFor="let per of personaLista">
+        <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': per.Edad + '%'}"  aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+</div>

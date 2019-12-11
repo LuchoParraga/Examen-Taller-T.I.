@@ -1,0 +1,39 @@
+<div class="container">
+    <div class = "row">
+        <div class ="col-md-4" *ngFor="let candidato of listaVotantes">
+            <div class ="card">
+                <div class = "card-header text-center">
+                    <h3>
+                        {{candidato.Nombre}}
+                    </h3>
+                </div>
+                <div class = "card-body">
+                    <img class = "justify-content-center" src={{candidato.Imagen}}>
+                </div>
+                <div class = "card-footer">
+                    <p>
+                        votos: <span>{{candidato.Cantidad_de_votos}}</span>
+                    </p>
+                    <button class="btn btn-warning" (click)="click_votar(candidato.id)">
+                        votar
+                    </button>
+                    <p>
+                        <span>{{candidato.Porcentaje_de_votos}}</span>%
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div style="display: block">
+                <canvas baseChart
+                    [data]="doughnutChartData"
+                    [labels]="doughnutChartLabels"
+                    [chartType]="doughnutChartType">
+                </canvas>
+            </div>
+        </div>
+     
+    </div>
+</div>
